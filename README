@@ -1,0 +1,35 @@
+# Multilingual Text Summarizer
+
+A FastAPI-based web application that provides both extractive and abstractive text summarization for multiple languages using IndicBART.
+
+## Features
+- Multilingual support (Telugu, Hindi, English)
+- Extractive summarization using IndicBART embeddings
+- Abstractive summarization using IndicBART generation
+- BERTScore evaluation for summary quality
+- Interactive web interface
+
+## Setup
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the server:
+   ```bash
+   uvicorn main:app --reload
+   ```
+4. Access the application at http://localhost:8000
+
+## Usage
+- Select language from dropdown
+- Choose summarization type (extractive/abstractive)
+- Enter text to summarize
+- Optionally provide reference summary for evaluation
+- Click "Generate Summary" button
+
+## Technical Details
+- Backend: FastAPI
+- ML Model: IndicBART (ai4bharat/IndicBART)
+- Frontend: HTML/CSS/JavaScript
+- Evaluation: BERTScore

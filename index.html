@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilingual Text Summarizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="heading-button" class="heading-button">
+                ✨ Multilingual Text Summarizer
+            </button>
+            <p>Generate concise summaries in multiple languages</p>
+        </header>
+        
+        <div class="form-section">
+            <label for="language">🌐 Select Language:</label>
+            <select id="language">
+                <option value="Telugu">Telugu</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
+            </select>
+
+            <label for="summary-type">📝 Select Summary Type:</label>
+            <select id="summary-type">
+                <option value="abstractive">Abstractive</option>
+                <option value="extractive">Extractive</option>
+            </select>
+
+            <div class="input-choice">
+                <button id="text-input-btn" class="input-toggle active">✍️ Text Input</button>
+                <button id="file-input-btn" class="input-toggle">📄 File Upload</button>
+            </div>
+
+            <div id="text-input-section">
+                <label for="article">✍️ Enter Text:</label>
+                <textarea id="article" rows="6" placeholder="Type or paste your text here..."></textarea>
+            </div>
+
+            <div id="file-input-section" style="display: none;">
+                <label for="file-upload">📎 Upload Document:</label>
+                <input type="file" id="file-upload" accept=".txt,.docx,.pdf"/>
+                <p class="file-info">Supported formats: TXT, DOCX, PDF</p>
+            </div>
+
+            <label for="reference-summary">📋 Reference Summary (Optional):</label>
+            <textarea id="reference-summary" rows="4" placeholder="Enter reference summary if available..."></textarea>
+
+            <button id="generate-summary">✨ Generate Summary</button>
+        </div>
+
+        <div class="output-section">
+            <h2>📝 Generated Summary</h2>
+            <div class="output-container">
+                <div id="summary-output" class="output-box">Your summary will appear here...</div>
+                <button id="copy-button" class="copy-button">📋 Copy</button>
+            </div>
+            <div id="spinner" class="spinner" style="display: none;"></div>
+
+            <h2>📊 Evaluation Scores</h2>
+            <div id="evaluation-output" class="output-box">Evaluation scores will appear here...</div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
